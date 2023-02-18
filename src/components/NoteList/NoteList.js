@@ -1,4 +1,4 @@
-import "./NoteList.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import { deleteNote } from "../../redux/actions/noteActions";
 import styles from "./NoteList.module.css";
