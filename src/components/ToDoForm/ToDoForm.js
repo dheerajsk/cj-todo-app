@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {addTodo} from "../../redux/actions/todoActions";
 
-import "./ToDoForm.css";
+import styles from "./ToDoForm.module.css";
 
 function ToDoForm() {
   const [todoText, setTodoText] = useState("");
@@ -15,7 +15,7 @@ function ToDoForm() {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       
     <form onSubmit={handleSubmit}>
       <input

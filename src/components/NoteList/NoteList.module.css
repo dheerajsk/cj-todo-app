@@ -1,14 +1,14 @@
 
 
-li{
+.item{
     display: flex;
     justify-content: space-between;
 }
 
-.note-content{
+.notecontent{
     width: 60%;
 }
 
-button{
+.button{
     height: fit-content;
 }

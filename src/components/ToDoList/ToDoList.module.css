@@ -27,7 +27,7 @@ li{
     color: white;
 }
 
-li{
+.item{
     width: 50%;
     margin-top: 6px;
     display: flex;
