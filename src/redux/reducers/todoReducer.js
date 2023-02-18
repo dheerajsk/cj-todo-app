@@ -36,6 +36,9 @@ export const todoReducer=todoSlice.reducer;
 
 export const actions = todoSlice.actions;
 
+// selector
+export const todoSelector = (state)=>state.todoReducer.todos;
+
 
 
 // Reducer using redux
