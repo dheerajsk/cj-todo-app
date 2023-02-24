@@ -23,6 +23,7 @@ function ToDoList() {
         .then(res=>
             {
               console.log(res.data);
+              disptach(actions.setInitialState(res.data));
             }
           );
   }, []);
