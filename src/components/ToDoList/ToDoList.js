@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 // import { toggleTodo } from "../../redux/actions/todoActions";
-import { actions } from "../../redux/reducers/todoReducer";
+import { actions , getInitialState} from "../../redux/reducers/todoReducer";
 import { todoSelector } from "../../redux/reducers/todoReducer";
 import styles from "./ToDoList.module.css";
 import {useEffect} from "react";
@@ -10,22 +10,24 @@ function ToDoList() {
 
   const todos=useSelector(todoSelector);
   console.log(todos);
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
+
   // const todos= store.getState().todos;
 
   useEffect(() => {
+    dispatch(getInitialState());
       // fetch("http://localhost:4100/api/todos")
       //   .then(res=>res.json())
       //     .then(parsedJson=>{
       //       console.log(parsedJson);
       //     })
-      axios.get("http://localhost:4100/api/todos")
-        .then(res=>
-            {
-              console.log(res.data);
-              disptach(actions.setInitialState(res.data));
-            }
-          );
+      // axios.get("http://localhost:4100/api/todos")
+      //   .then(res=>
+      //       {
+      //         console.log(res.data);
+      //         dispatch(actions.setInitialState(res.data));
+      //       }
+      //     );
   }, []);
 
 
@@ -39,7 +41,7 @@ function ToDoList() {
           <button className="btn btn-warning"
           onClick={()=>{
             // console.log("[LOG]: Todo - TOGGLE Action dispatched");
-            disptach(actions.toggle(index))}}
+            dispatch(actions.toggle(index))}}
           >Toggle</button>
           </li>
       ))}
